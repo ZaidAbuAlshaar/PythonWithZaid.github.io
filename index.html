@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaid.python - مساعد بايثون الذكي</title>
+    <title>Zaid.python - تعلم بايثون مع زيد</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -437,191 +437,6 @@
             transform: scale(1.2);
         }
         
-        /* AI Chat Styles */
-        #ai-chat-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #5c6bc0, #7986cb);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        #ai-chat-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        #ai-chat-container {
-            position: fixed;
-            bottom: 120px;
-            right: 30px;
-            width: 350px;
-            height: 500px;
-            background-color: rgba(31, 40, 51, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            z-index: 1000;
-            overflow: hidden;
-            transform: translateY(20px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        #ai-chat-container.open {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .chat-header {
-            background: linear-gradient(135deg, #5c6bc0, #7986cb);
-            padding: 15px 20px;
-            color: white;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .chat-header-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .chat-close-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        
-        .chat-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .message {
-            max-width: 80%;
-            padding: 12px 15px;
-            border-radius: 18px;
-            animation: fadeIn 0.3s ease;
-            word-break: break-word;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .user-message {
-            background-color: #5c6bc0;
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 5px;
-        }
-        
-        .ai-message {
-            background-color: rgba(58, 63, 75, 0.8);
-            color: white;
-            align-self: flex-start;
-            border-bottom-left-radius: 5px;
-        }
-        
-        .ai-message code {
-            background-color: rgba(45, 55, 72, 0.8);
-            padding: 5px 10px;
-            border-radius: 6px;
-            font-family: monospace;
-            display: block;
-            margin: 8px 0;
-            white-space: pre-wrap;
-            direction: ltr;
-        }
-        
-        .chat-input-area {
-            padding: 15px;
-            background-color: rgba(45, 55, 72, 0.8);
-            display: flex;
-            gap: 10px;
-        }
-        
-        #chat-input {
-            flex: 1;
-            padding: 12px 15px;
-            border-radius: 25px;
-            border: none;
-            background-color: rgba(26, 32, 44, 0.8);
-            color: white;
-            outline: none;
-        }
-        
-        #send-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #5c6bc0, #7986cb);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-        
-        #send-btn:hover {
-            transform: scale(1.05);
-        }
-        
-        .chat-typing-indicator {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 12px;
-            background-color: rgba(58, 63, 75, 0.8);
-            border-radius: 15px;
-            align-self: flex-start;
-            margin-bottom: 10px;
-        }
-        
-        .typing-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #82b1ff;
-            border-radius: 50%;
-            animation: typing 1.4s infinite ease-in-out;
-        }
-        
-        .typing-dot:nth-child(1) { animation-delay: 0s; }
-        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-        
-        @keyframes typing {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-5px); }
-        }
-        
         /* Back to Top Button */
         #back-to-top-btn {
             position: fixed;
@@ -690,28 +505,19 @@
         .soft-green { background-color: rgba(52, 168, 83, 0.15); }
         .soft-orange { background-color: rgba(251, 188, 5, 0.15); }
         
-        /* AI Assistant Description */
-        .ai-assistant-desc {
-            background: rgba(31, 40, 51, 0.7);
-            border-radius: 20px;
-            padding: 25px;
-            margin-top: 40px;
-            border: 1px solid rgba(92, 107, 192, 0.3);
-        }
-        
         /* حل مشكلة التباعد في الشريط العلوي للغة العربية */
         .nav-link {
             margin: 0 15px;
         }
         
-        /* Chat Page Styles */
-        .chat-page-container {
-            max-width: 800px;
+        /* FAQ Page Styles */
+        .faq-page-container {
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
         
-        .chat-page-title {
+        .faq-page-title {
             font-size: 2.5rem;
             font-weight: bold;
             color: white;
@@ -719,95 +525,181 @@
             margin: 40px 0 20px;
         }
         
-        .chat-page-description {
+        .faq-page-description {
             font-size: 1.1rem;
             color: #c5c6c7;
             text-align: center;
             margin-bottom: 40px;
         }
         
-        .chat-page-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 50px 0;
-        }
-        
-        .chat-feature-card {
+        .faq-level {
             background: rgba(31, 40, 51, 0.7);
             border-radius: 16px;
             padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
+            margin-bottom: 30px;
             border: 1px solid rgba(92, 107, 192, 0.3);
         }
         
-        .chat-feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(92, 107, 192, 0.2);
-        }
-        
-        .chat-feature-icon {
-            font-size: 50px;
-            color: #7986cb;
-            margin-bottom: 20px;
-        }
-        
-        .chat-feature-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 15px;
-        }
-        
-        .chat-feature-desc {
-            font-size: 1rem;
-            color: #c5c6c7;
-            line-height: 1.6;
-        }
-        
-        .chat-examples {
-            background: rgba(31, 40, 51, 0.7);
-            border-radius: 16px;
-            padding: 30px;
-            margin: 50px 0;
-            border: 1px solid rgba(92, 107, 192, 0.3);
-        }
-        
-        .chat-example-title {
+        .faq-level-title {
             font-size: 1.8rem;
             font-weight: bold;
             color: #82b1ff;
             margin-bottom: 20px;
             text-align: center;
+            border-bottom: 2px solid #5c6bc0;
+            padding-bottom: 10px;
         }
         
-        .chat-example {
+        .faq-question {
+            margin: 20px 0;
+            padding: 20px;
             background: rgba(26, 26, 46, 0.7);
             border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
+            transition: all 0.3s ease;
         }
         
-        .chat-example-question {
-            font-size: 1.1rem;
-            color: #82b1ff;
-            margin-bottom: 10px;
+        .faq-question:hover {
+            background: rgba(26, 26, 46, 0.9);
+            transform: translateY(-3px);
+        }
+        
+        .faq-question-header {
             display: flex;
             align-items: center;
+            margin-bottom: 15px;
         }
         
-        .chat-example-question i {
+        .faq-question-number {
+            width: 30px;
+            height: 30px;
+            background: #5c6bc0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-left: 10px;
+            font-weight: bold;
         }
         
-        .chat-example-answer {
+        .faq-question-title {
+            font-size: 1.3rem;
+            color: white;
+            margin: 0;
+        }
+        
+        .faq-question-answer {
             font-size: 1rem;
             color: #e3f2fd;
-            margin-top: 15px;
             padding: 15px;
             background: rgba(13, 17, 23, 0.8);
             border-radius: 8px;
+            line-height: 1.6;
+        }
+        
+        .faq-question-answer code {
+            background-color: rgba(45, 55, 72, 0.8);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            display: block;
+            margin: 8px 0;
+            white-space: pre-wrap;
+            direction: ltr;
+        }
+        
+        .faq-question-answer pre {
+            background-color: rgba(13, 17, 23, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #f8f8f2;
+            line-height: 1.5;
+            margin-top: 10px;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .faq-question-answer .highlight {
+            background-color: rgba(255, 215, 0, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        /* New Contact Form */
+        .contact-form {
+            background: rgba(31, 40, 51, 0.7);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 50px;
+            border: 1px solid rgba(92, 107, 192, 0.3);
+        }
+        
+        .contact-form h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #82b1ff;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #5c6bc0;
+            padding-bottom: 10px;
+        }
+        
+        .contact-form p {
+            font-size: 1.1rem;
+            color: #c5c6c7;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #82b1ff;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: rgba(26, 26, 46, 0.7);
+            border: 1px solid rgba(92, 107, 192, 0.3);
+            color: white;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #5c6bc0;
+            box-shadow: 0 0 0 2px rgba(92, 107, 192, 0.5);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #5c6bc0, #7986cb);
+            color: white;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(92, 107, 192, 0.4);
         }
     </style>
 </head>
@@ -824,37 +716,6 @@
     <button id="back-to-top-btn" class="back-to-top" onclick="scrollToTop()">
         <i class="fas fa-arrow-up text-lg"></i>
     </button>
-
-    <!-- AI Chat Button -->
-    <div id="ai-chat-button">
-        <i class="fas fa-robot"></i>
-    </div>
-    
-    <!-- AI Chat Container -->
-    <div id="ai-chat-container">
-        <div class="chat-header">
-            <div class="chat-header-title">
-                <i class="fas fa-robot"></i>
-                <span id="chat-title">مساعد بايثون الذكي</span>
-            </div>
-            <button class="chat-close-btn" onclick="closeChat()">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="chat-messages" id="chat-messages">
-            <div class="message ai-message">
-                أنا مساعدك الذكي بعد تعليمات زيد أبو الشعر. أنتظر أسئلتك عن لغة بايثون!
-                <br><br>
-                مثال: "ما هي القوائم في بايثون؟" أو "كيف أتعامل مع الأخطاء؟"
-            </div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." autocomplete="off">
-            <button id="send-btn" onclick="sendMessage()">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
-    </div>
 
     <script>
         // Generate particles
@@ -926,7 +787,7 @@
                 navHome: " الرئيسية",
                 navAbout: "عني ",
                 navLevels: "المستويات",
-                navChat: "المساعد الذكي",
+                navFaq: "الأسئلة الشائعة",
                 homeTitle: "أتقن بايثون مع زيد",
                 homeSubtitle: "تعلم بايثون من الأساسيات إلى المفاهيم المتقدمة مع دروس تفاعلية واختبارات",
                 homeButtonStart: "ابدأ الآن →",
@@ -1020,29 +881,19 @@
                 feature1Desc: "دروس تفاعلية مع أمثلة عملية وتطبيق مباشر",
                 feature2Title: "اختبارات وتقييم",
                 feature2Desc: "اختبارات بعد كل مستوى لقياس مدى تقدمك",
-                feature3Title: "مساعد ذكي",
-                feature3Desc: "مساعد ذكي متاح 24/7 للإجابة على أسئلتك البرمجية",
-                aiAssistantTitle: "مساعد بايثون الذكي",
-                aiAssistantDesc: "مساعد ذكي متاح على مدار الساعة للإجابة على أسئلتك البرمجية وتقديم المساعدة في حل المشكلات التي تواجهك أثناء تعلم بايثون",
-                chatPageTitle: "مساعد بايثون الذكي",
-                chatPageDesc: "مساعد ذكي متاح على مدار الساعة للإجابة على أسئلتك البرمجية وتقديم المساعدة في حل المشكلات",
-                chatFeature1Title: "إجابات فورية",
-                chatFeature1Desc: "احصل على إجابات فورية لأسئلتك البرمجية في أي وقت",
-                chatFeature2Title: "شرح مفاهيم",
-                chatFeature2Desc: "شرح مفصل لمفاهيم بايثون مع أمثلة عملية",
-                chatFeature3Title: "مساعدة في حل المشكلات",
-                chatFeature3Desc: "مساعدتك في حل المشكلات البرمجية التي تواجهك",
-                chatExamplesTitle: "أمثلة على الأسئلة",
-                chatExample1: "ما هي القوائم في بايثون؟",
-                chatExample2: "كيف أتعامل مع الأخطاء في بايثون؟",
-                chatExample3: "ما الفرق بين القوائم والمجموعات؟"
+                faqPageTitle: "الأسئلة الشائعة",
+                faqPageDesc: "إجابات على الأسئلة الأكثر شيوعاً في تعلم بايثون",
+                faqContactTitle: "هل لديك سؤال آخر؟",
+                faqContactDesc: "إذا كان لديك سؤال لم تجد إجابته في الأسئلة الشائعة، يمكنك طرحه هنا وسأرد عليك عبر واتساب",
+                faqContactPlaceholder: "اكتب سؤالك هنا...",
+                faqContactButton: "إرسال السؤال"
             },
             en: {
                 appName: "Zaid.python",
                 navHome: "Home",
                 navAbout: "About",
                 navLevels: "Levels",
-                navChat: "AI Assistant",
+                navFaq: "FAQs",
                 homeTitle: "Master Python with Zaid",
                 homeSubtitle: "Master Python from basics to advanced concepts with interactive tutorials and quizzes",
                 homeButtonStart: "Start Now →",
@@ -1136,23 +987,294 @@
                 feature1Desc: "Interactive lessons with practical examples and live coding",
                 feature2Title: "Tests & Evaluation",
                 feature2Desc: "Quizzes after each level to measure your progress",
-                feature3Title: "Smart Assistant",
-                feature3Desc: "AI assistant available 24/7 to answer your programming questions",
-                aiAssistantTitle: "Python AI Assistant",
-                aiAssistantDesc: "Smart assistant available around the clock to answer your programming questions and help solve problems you encounter while learning Python",
-                chatPageTitle: "Python AI Assistant",
-                chatPageDesc: "Smart assistant available 24/7 to answer your programming questions and help solve problems",
-                chatFeature1Title: "Instant Answers",
-                chatFeature1Desc: "Get immediate answers to your programming questions anytime",
-                chatFeature2Title: "Concept Explanations",
-                chatFeature2Desc: "Detailed explanations of Python concepts with practical examples",
-                chatFeature3Title: "Problem Solving Help",
-                chatFeature3Desc: "Assistance in solving programming problems you encounter",
-                chatExamplesTitle: "Example Questions",
-                chatExample1: "What are lists in Python?",
-                chatExample2: "How do I handle errors in Python?",
-                chatExample3: "What is the difference between lists and tuples?"
+                faqPageTitle: "Frequently Asked Questions",
+                faqPageDesc: "Answers to the most common questions about learning Python",
+                faqContactTitle: "Have another question?",
+                faqContactDesc: "If you have a question not listed above, ask me here and I'll respond via WhatsApp",
+                faqContactPlaceholder: "Type your question here...",
+                faqContactButton: "Send Question"
             }
+        };
+
+        // FAQ Questions
+        const faqQuestions = {
+            1: [
+                {
+                    question: "ما هي أنواع البيانات الأساسية في بايثون؟",
+                    answer: `أنواع البيانات الأساسية في بايثون تشمل:
+1. الأعداد الصحيحة (int): مثل 5, 10, -3
+2. الأعداد العشرية (float): مثل 3.14, 2.5, -0.5
+3. السلاسل النصية (str): مثل "مرحباً", 'بايثون'
+4. القيم المنطقية (bool): True أو False
+5. القوائم (list): [1, 2, 3]
+6. المجموعات (tuple): (1, 2, 3)
+7. القواميس (dict): {'name': 'زيد', 'age': 25}
+8. المجموعات (set): {1, 2, 3}
+
+يمكنك التحقق من نوع أي متغير باستخدام دالة type():
+<code>print(type(5))      # <class 'int'>
+print(type(3.14))    # <class 'float'>
+print(type("Hello")) # <class 'str'></code>`
+                },
+                {
+                    question: "كيف يمكنني أخذ مدخلات من المستخدم؟",
+                    answer: `يمكنك استخدام الدالة input() لأخذ مدخلات من المستخدم:
+<code>name = input("أدخل اسمك: ")
+print("مرحباً، " + name + "!")</code>
+
+لأخذ مدخلات رقمية، يمكنك تحويل النص إلى عدد:
+<code>age = int(input("أدخل عمرك: "))
+print("سيكون عمرك بعد سنة: ", age + 1)</code>`
+                },
+                {
+                    question: "كيف يمكنني تحويل بين أنواع البيانات؟",
+                    answer: `يمكنك التحويل بين أنواع البيانات باستخدام دوال التحويل:
+1. int(): تحويل إلى عدد صحيح
+2. float(): تحويل إلى عدد عشري
+3. str(): تحويل إلى سلسلة نصية
+4. bool(): تحويل إلى قيمة منطقية
+
+أمثلة:
+<code>num_str = "123"
+num_int = int(num_str)  # تحويل النص إلى عدد صحيح
+
+float_str = "3.14"
+float_val = float(float_str)  # تحويل النص إلى عدد عشري
+
+int_to_str = str(42)  # تحويل العدد إلى نص</code>`
+                }
+            ],
+            2: [
+                {
+                    question: "ما هو المتغير في بايثون؟",
+                    answer: `المتغير هو اسم نطلقه على مكان في الذاكرة لتخزين البيانات. تخيله كصندوق يمكنك وضع أي شيء بداخله.
+
+طريقة تعريف المتغير:
+<code>x = 10
+greeting = "مرحباً، بايثون!"
+my_variable = "هذا متغير."</code>
+
+قواعد تسمية المتغيرات:
+- يمكن أن يحتوي على حروف، أرقام، وشرطة سفلية
+- لا يمكن أن يبدأ برقم
+- حساس لحالة الأحرف (Name ≠ name)
+- لا يمكن استخدام الكلمات المفتاحية مثل if, for, while
+- يفضل استخدام أسماء وصفية مثل user_name بدلاً من un`
+                },
+                {
+                    question: "ما هي التعبيرات في بايثون؟",
+                    answer: `التعبيرات (Expressions) هي مزيج من المتغيرات والقيم والمعاملات التي يتم تقييمها للحصول على قيمة واحدة.
+
+أمثلة:
+<code>a = 15
+b = 4
+sum_result = a + b
+diff_result = a - b
+mult_result = a * b
+div_result = a / b
+
+print(f"النتيجة: {sum_result}")  # 19
+print(f"النتيجة: {diff_result}") # 11
+print(f"النتيجة: {mult_result}") # 60
+print(f"النتيجة: {div_result}")  # 3.75</code>`
+                }
+            ],
+            3: [
+                {
+                    question: "ما هي أنواع المعاملات في بايثون؟",
+                    answer: `أنواع المعاملات:
+1. معاملات حسابية: +, -, *, /, %, //, **
+2. معاملات مقارنة: ==, !=, >, <, >=, <=
+3. معاملات منطقية: and, or, not
+4. معاملات هوية: is, is not
+5. معاملات عضوية: in, not in
+
+أمثلة:
+<code># معاملات حسابية
+print(10 + 3)  # 13
+print(10 - 3)  # 7
+print(10 * 3)  # 30
+print(10 / 3)  # 3.333
+print(10 % 3)  # 1 (باقي القسمة)
+print(10 // 3) # 3 (قسمة صحيحة)
+print(10 ** 3) # 1000 (أس)
+
+# معاملات مقارنة
+print(10 == 10) # True
+print(10 != 10) # False
+print(10 > 5)   # True
+print(10 < 5)   # False
+print(10 >= 10) # True
+print(10 <= 5)  # False
+
+# معاملات منطقية
+print(True and False) # False
+print(True or False)  # True
+print(not True)       # False</code>`
+                }
+            ],
+            4: [
+                {
+                    question: "كيف أستخدم عبارات if في بايثون؟",
+                    answer: `يمكنك استخدام عبارات if, elif, else لاتخاذ قرارات في الكود:
+
+<code># عبارة if بسيطة
+age = 20
+if age >= 18:
+    print("أنت بالغ.")
+
+# عبارة if-else
+temperature = 25
+if temperature > 30:
+    print("يوم حار!")
+else:
+    print("يوم معتدل!")
+
+# سلسلة if-elif-else
+score = 85
+if score >= 90:
+    print("التقدير: ممتاز")
+elif score >= 80:
+    print("التقدير: جيد جداً")
+elif score >= 70:
+    print("التقدير: جيد")
+else:
+    print("التقدير: مقبول")</code>`
+                }
+            ],
+            5: [
+                {
+                    question: "ما الفرق بين حلقة for وحلقة while؟",
+                    answer: `1. حلقة for: تستخدم للتكرار على سلسلة من العناصر (قائمة، مجموعة، سلسلة نصية، إلخ)
+<code>fruits = ["تفاح", "موز", "كرز"]
+for fruit in fruits:
+    print(f"أحب {fruit}")
+
+# مع دالة range()
+for number in range(5): 
+    print(f"الرقم: {number}")</code>
+
+2. حلقة while: تستمر في التكرار طالما أن الشرط صحيح
+<code>count = 0
+while count < 5:
+    print(f"العدد: {count}")
+    count += 1  # زيادة العدد بمقدار 1 في كل تكرار</code>`
+                }
+            ],
+            6: [
+                {
+                    question: "ما الفرق بين القوائم (Lists) والمجموعات (Tuples)؟",
+                    answer: `الاختلافات الرئيسية:
+1. القوائم (Lists):
+   - قابلة للتغيير (mutable)
+   - يمكن إضافة/حذف/تعديل العناصر
+   - تستخدم الأقواس المربعة []
+
+2. المجموعات (Tuples):
+   - غير قابلة للتغيير (immutable)
+   - لا يمكن تعديلها بعد الإنشاء
+   - تستخدم الأقواس العادية ()
+
+أمثلة:
+<code># قائمة
+my_list = ["تفاح", "موز", "كرز"]
+my_list[1] = "توت"     # تعديل عنصر
+my_list.append("برتقال")  # إضافة عنصر
+print(my_list) # ['تفاح', 'توت', 'كرز', 'برتقال']
+
+# مجموعة
+my_tuple = ("تفاح", "موز", "كرز")
+# my_tuple[1] = "توت" # سيؤدي هذا إلى خطأ
+print(my_tuple) # ('تفاح', 'موز', 'كرز')</code>`
+                }
+            ],
+            7: [
+                {
+                    question: "ما هي القواميس (Dictionaries) في بايثون؟",
+                    answer: `القواميس هي هياكل بيانات تخزن البيانات كأزواج مفتاح-قيمة (key-value pairs). المفاتيح يجب أن تكون فريدة وغير قابلة للتغيير.
+
+طريقة تعريف قاموس:
+<code>user_profile = {
+    "username": "zaid",
+    "email": "zaid@example.com",
+    "age": 25
+}</code>
+
+الوصول إلى القيم:
+<code>print(user_profile["username"]) # الوصول إلى قيمة المفتاح
+user_profile["age"] = 26        # تعديل قيمة
+user_profile["location"] = "عمان" # إضافة زوج مفتاح-قيمة جديد</code>`
+                }
+            ],
+            8: [
+                {
+                    question: "كيف أُعرف دالة في بايثون؟",
+                    answer: `يمكنك تعريف دوال باستخدام الكلمة المفتاحية def:
+
+<code>def greet(name):
+    """هذه الدالة ترحب بالشخص الممرر كمعامل"""
+    print(f"مرحباً، {name}!")
+
+# استدعاء الدالة
+greet("زيد")</code>
+
+الدوال يمكن أن تعيد قيم باستخدام return:
+<code>def add_numbers(a, b):
+    """تجمع رقمين وتعيد النتيجة"""
+    return a + b
+
+result = add_numbers(5, 7)
+print(f"النتيجة: {result}") # 12</code>`
+                }
+            ],
+            9: [
+                {
+                    question: "كيف أتعامل مع الملفات في بايثون؟",
+                    answer: `يمكنك استخدام with open() للتعامل مع الملفات بأمان:
+
+<code># الكتابة إلى ملف
+with open("testfile.txt", "w") as file:
+    file.write("مرحباً، هذا ملف تجريبي.\\n")
+    file.write("هذا هو السطر الثاني.")
+
+# القراءة من ملف
+with open("testfile.txt", "r") as file:
+    content = file.read()
+    print(f"محتوى الملف:\\n{content}")
+
+# إضافة محتوى إلى ملف موجود
+with open("testfile.txt", "a") as file:
+    file.write("\\nسطر جديد تمت إضافته.")</code>`
+                }
+            ],
+            10: [
+                {
+                    question: "كيف أنشئ واجهة مستخدم رسومية باستخدام Tkinter؟",
+                    answer: `مثال بسيط لإنشاء نافذة باستخدام Tkinter:
+
+<code>import tkinter as tk
+from tkinter import messagebox
+
+def on_button_click():
+    messagebox.showinfo("رسالة", "تم النقر على الزر!")
+
+# إنشاء النافذة الرئيسية
+root = tk.Tk()
+root.title("تطبيق واجهة المستخدم")
+root.geometry("300x200")
+
+# إنشاء تسمية
+label = tk.Label(root, text="مرحباً بك في تطبيق الواجهة!", font=("Arial", 14))
+label.pack(pady=20)
+
+# إنشاء زر
+button = tk.Button(root, text="انقر هنا", command=on_button_click)
+button.pack()
+
+# بدء حلقة الأحداث الرئيسية
+root.mainloop()</code>`
+                }
+            ]
         };
 
         // State
@@ -1238,165 +1360,6 @@
             ]
         };
 
-        // AI Chat Functions
-        let chatOpen = false;
-        const aiResponses = {
-        ar: {
-            "hello": "مرحباً! أنا مساعدك الذكي لتعلم لغة بايثون. كيف يمكنني مساعدتك اليوم؟",
-            "help": "يمكنني مساعدتك في شرح مفاهيم البايثون، حل المشكلات، تقديم أمثلة، والإجابة على أسئلتك البرمجية. فقط اطرح سؤالك!",
-            "data types": "في بايثون، الأنواع الأساسية للبيانات تشمل:\n\n1. الأعداد الصحيحة (int): مثل 5, 10, -3\n2. الأعداد العشرية (float): مثل 3.14, 2.5, -0.5\n3. السلاسل النصية (str): مثل \"مرحباً\", \"بايثون\"\n4. القيم المنطقية (bool): True أو False\n5. القوائم (list): [1, 2, 3]\n6. المجموعات (tuple): (1, 2, 3)\n7. القواميس (dict): {'name': 'زيد', 'age': 25}\n8. المجموعات (set): {1, 2, 3}",
-            "variables": "المتغيرات في بايثون هي أماكن تخزين للبيانات. يمكنك إنشاء متغير باستخدام علامة المساواة:\n\n```python\nname = \"زيد\"\nage = 25\nis_student = True\n```\n\nالقواعد:\n- يمكن أن تحتوي على حروف، أرقام، وشرطة سفلية\n- لا يمكن أن تبدأ برقم\n- حساسة لحالة الأحرف (Name ≠ name)",
-            "functions": "الدوال في بايثون تسمح لك بتنظيم الكود وإعادة استخدامه:\n\n```python\ndef greet(name):\n    \"\"\"هذه الدالة ترحب بالمستخدم\"\"\"\n    print(f\"مرحباً، {name}!\")\n\n# استدعاء الدالة\ngreet(\"أحمد\")\n```\n\nالمكونات:\n- `def`: كلمة مفتاحية لتعريف الدالة\n- `greet`: اسم الدالة\n- `(name)`: معاملات الدالة\n- `print(...)`: جسم الدالة",
-            "loops": "الحلقات في بايثون تستخدم لتكرار تنفيذ كتلة من الكود:\n\n1. حلقة `for`:\n```python\nfruits = [\"تفاح\", \"موز\", \"كرز\"]\nfor fruit in fruits:\n    print(f\"أحب {fruit}\")```\n\n2. حلقة `while`:\n```python\ncount = 0\nwhile count < 5:\n    print(f\"العدد: {count}\")\n    count += 1  # زيادة العدد بمقدار 1 في كل تكرار```",
-            "oop": "البرمجة الشيئية (OOP) في بايثون:\n\n```python\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def greet(self):\n        print(f\"مرحباً، اسمي {self.name} وعمري {self.age}\")\n\n# إنشاء كائن\nperson1 = Person(\"زيد\", 25)\nperson1.greet()\n```\n\nالمفاهيم الأساسية:\n- الفئات (Classes): قوالب لإنشاء الكائنات\n- الكائنات (Objects): نماذج من الفئات\n- السمات (Attributes): متغيرات الكائن\n- الدوال (Methods): دوال الكائن",
-            "error": "عذراً، لم أفهم سؤالك. يمكنك صياغته بطريقة أخرى؟\n\nإليك بعض المواضيع التي يمكنني مساعدتك بها:\n- أنواع البيانات\n- المتغيرات\n- الدوال\n- الحلقات\n- البرمجة الشيئية",
-            "default": "أنا مساعدك الذكي لتعلم بايثون. يمكنني:\n- شرح مفاهيم البرمجة\n- تقديم أمثلة عملية\n- الإجابة على أسئلتك البرمجية\n- مساعدتك في حل الأخطاء\n\nما الذي تريد أن تتعلمه اليوم؟"
-        },
-        en: {
-            "hello": "Hello! I'm your AI Python learning assistant. How can I help you today?",
-            "help": "I can help you explain Python concepts, solve problems, provide examples, and answer your coding questions. Just ask!",
-            "data types": "In Python, the basic data types include:\n\n1. Integers (int): e.g., 5, 10, -3\n2. Floating-point numbers (float): e.g., 3.14, 2.5, -0.5\n3. Strings (str): e.g., \"Hello\", 'Python'\n4. Booleans (bool): True or False\n5. Lists (list): [1, 2, 3]\n6. Tuples (tuple): (1, 2, 3)\n7. Dictionaries (dict): {'name': 'Zaid', 'age': 25}\n8. Sets (set): {1, 2, 3}",
-            "variables": "Variables in Python are storage locations for data. You can create a variable using the equals sign:\n\n```python\nname = \"Zaid\"\nage = 25\nis_student = True\n```\n\nRules:\n- Can contain letters, numbers, and underscores\n- Cannot start with a number\n- Case-sensitive (Name ≠ name)",
-            "functions": "Functions in Python allow you to organize and reuse code:\n\n```python\ndef greet(name):\n    \"\"\"This function greets the user\"\"\"\n    print(f\"Hello, {name}!\")\n\n# Calling the function\ngreet(\"Ahmed\")\n```\n\nComponents:\n- `def`: Keyword to define a function\n- `greet`: Function name\n- `(name)`: Parameters\n- `print(...)`: Function body",
-            "loops": "Loops in Python are used to repeatedly execute a block of code:\n\n1. `for` loop:\n```python\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n```\n\n2. `while` loop:\n```python\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n```",
-            "oop": "Object-Oriented Programming (OOP) in Python:\n\n```python\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def greet(self):\n        print(f\"Hello, my name is {self.name} and I'm {self.age}\")\n\n# Creating an object\nperson1 = Person(\"Zaid\", 25)\nperson1.greet()\n```\n\nKey concepts:\n- Classes: Templates for creating objects\n- Objects: Instances of classes\n- Attributes: Object variables\n- Methods: Object functions",
-            "error": "Sorry, I didn't understand your question. Can you rephrase it?\n\nHere are some topics I can help with:\n- Data types\n- Variables\n- Functions\n- Loops\n- Object-oriented programming",
-            "default": "I'm your AI Python learning assistant. I can:\n- Explain programming concepts\n- Provide practical examples\n- Answer your coding questions\n- Help you debug errors\n\nWhat would you like to learn today?"
-        }
-        };
-
-        function openChat() {
-            const chatContainer = document.getElementById('ai-chat-container');
-            chatContainer.classList.add('open');
-            chatOpen = true;
-            document.getElementById('chat-title').textContent = currentLang === 'ar' ? 'مساعد بايثون الذكي' : 'Python AI Assistant';
-        }
-
-        function closeChat() {
-            const chatContainer = document.getElementById('ai-chat-container');
-            chatContainer.classList.remove('open');
-            chatOpen = false;
-        }
-        
-        function scrollToBottom() {
-            const messagesContainer = document.getElementById('chat-messages');
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chat-input');
-            const message = input.value.trim();
-            
-            if (!message) return;
-            
-            // Add user message
-            addMessage(message, 'user');
-            input.value = '';
-            
-            // Simulate AI thinking
-            showTypingIndicator();
-            
-            // Get AI response after a short delay
-            setTimeout(() => {
-                hideTypingIndicator();
-                const aiResponse = getAIResponse(message);
-                addMessage(aiResponse, 'ai');
-                scrollToBottom();
-            }, 1500);
-        }
-
-        function addMessage(text, sender) {
-            const messagesContainer = document.getElementById('chat-messages');
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message');
-            messageElement.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
-            
-            // Format code snippets
-            const formattedText = text.replace(/```python([\s\S]*?)```/g, '<code>$1</code>');
-            messageElement.innerHTML = formattedText;
-            
-            messagesContainer.appendChild(messageElement);
-            scrollToBottom();
-        }
-
-        function showTypingIndicator() {
-            const messagesContainer = document.getElementById('chat-messages');
-            const typingIndicator = document.createElement('div');
-            typingIndicator.classList.add('chat-typing-indicator');
-            typingIndicator.id = 'typing-indicator';
-            typingIndicator.innerHTML = `
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <span>${currentLang === 'ar' ? 'يكتب...' : 'Typing...'}</span>
-            `;
-            messagesContainer.appendChild(typingIndicator);
-            scrollToBottom();
-        }
-
-        function hideTypingIndicator() {
-            const typingIndicator = document.getElementById('typing-indicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
-        }
-
-        function getAIResponse(message) {
-            const langKey = currentLang;
-            const lowerMessage = message.toLowerCase();
-            
-            // Check for common keywords
-            if (lowerMessage.includes('مرحبا') || lowerMessage.includes('hello') || 
-                lowerMessage.includes('اهلا') || lowerMessage.includes('hi')) {
-                return aiResponses[langKey]['hello'];
-            }
-            if (lowerMessage.includes('مساعدة') || lowerMessage.includes('help') || 
-                lowerMessage.includes('ساعدني') || lowerMessage.includes('مساعده')) {
-                return aiResponses[langKey]['help'];
-            }
-            if (lowerMessage.includes('أنواع البيانات') || lowerMessage.includes('data types') || 
-                lowerMessage.includes('نوع البيانات') || lowerMessage.includes('data type')) {
-                return aiResponses[langKey]['data types'];
-            }
-            if (lowerMessage.includes('متغيرات') || lowerMessage.includes('variables') || 
-                lowerMessage.includes('متغير')) {
-                return aiResponses[langKey]['variables'];
-            }
-            if (lowerMessage.includes('دوال') || lowerMessage.includes('functions') || 
-                lowerMessage.includes('دالة')) {
-                return aiResponses[langKey]['functions'];
-            }
-            if (lowerMessage.includes('حلقات') || lowerMessage.includes('loops') || 
-                lowerMessage.includes('حلقة') || lowerMessage.includes('loop')) {
-                return aiResponses[langKey]['loops'];
-            }
-            if (lowerMessage.includes('برمجة شيئية') || lowerMessage.includes('oop') || 
-                lowerMessage.includes('object oriented') || lowerMessage.includes('class') || 
-                lowerMessage.includes('فئة') || lowerMessage.includes('كائن')) {
-                return aiResponses[langKey]['oop'];
-            }
-            
-            // If no match, provide a default response
-            return aiResponses[langKey]['default'];
-        }
-
-        // Toggle chat when button is clicked
-        document.getElementById('ai-chat-button').addEventListener('click', () => {
-            if (chatOpen) {
-                closeChat();
-            } else {
-                openChat();
-                scrollToBottom();
-            }
-        });
-
-        // Send message when Enter is pressed
-        document.getElementById('chat-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-
         // Update direction and font based on language
         function updateDirection() {
             const htmlTag = document.documentElement;
@@ -1414,21 +1377,6 @@
             currentLang = currentLang === 'ar' ? 'en' : 'ar';
             updateDirection();
             renderPage();
-            
-            // Update chat title
-            if (chatOpen) {
-                document.getElementById('chat-title').textContent = currentLang === 'ar' ? 'مساعد بايثون الذكي' : 'Python AI Assistant';
-                
-                // Clear chat and show new welcome message
-                document.getElementById('chat-messages').innerHTML = `
-                    <div class="message ai-message">
-                        ${currentLang === 'ar' ? 
-                            'أنا مساعدك الذكي بعد تعليمات زيد أبو الشعر. أنتظر أسئلتك عن لغة بايثون!' : 
-                            'Hello! I\'m your AI Python learning assistant. How can I help you today?'}
-                    </div>
-                `;
-                scrollToBottom();
-            }
         }
 
         // Render functions now use translations
@@ -1509,48 +1457,6 @@
                                 <h3 class="text-xl font-bold text-white mb-2">${t.feature2Title}</h3>
                                 <p class="text-gray-300">${t.feature2Desc}</p>
                             </div>
-                            <div class="feature-card soft-orange">
-                                <div class="feature-icon">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white mb-2">${t.feature3Title}</h3>
-                                <p class="text-gray-300">${t.feature3Desc}</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- AI Assistant Description -->
-                <section class="py-12">
-                    <div class="container mx-auto px-4 max-w-5xl">
-                        <div class="ai-assistant-desc">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-blue-500 p-3 rounded-full mr-4">
-                                    <i class="fas fa-robot text-white text-xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white">${t.aiAssistantTitle}</h3>
-                            </div>
-                            <p class="text-gray-300 mb-4">${t.aiAssistantDesc}</p>
-                            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
-                                <div class="flex items-center">
-                                    <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-2">
-                                        <i class="fas fa-check text-white text-xs"></i>
-                                    </div>
-                                    <span class="text-gray-300">إجابات فورية على الأسئلة البرمجية</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-2">
-                                        <i class="fas fa-check text-white text-xs"></i>
-                                    </div>
-                                    <span class="text-gray-300">شرح مفاهيم بايثون بطريقة مبسطة</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-2">
-                                        <i class="fas fa-check text-white text-xs"></i>
-                                    </div>
-                                    <span class="text-gray-300">مساعدة في حل المشكلات البرمجية</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -1578,7 +1484,7 @@
                         
                         <!-- Profile Image with the actual photo -->
                         <div class="profile-img-container">
-                            <img src="https://via.placeholder.com/200" alt="Zaid Abu Al Shaar" class="profile-img">
+                            <img src="6U8A0156.JPG" alt="Zaid Abu Al Shaar" class="profile-img">
                             <div class="profile-img-overlay">
                                 <i class="fas fa-user-circle text-white text-4xl"></i>
                             </div>
@@ -1595,7 +1501,7 @@
                                 <a href="https://www.instagram.com/Zaid_10_7" target="_blank" class="bg-gradient-instagram text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 social-button">
                                     <i class="fab fa-instagram social-icon"></i> Instagram
                                 </a>
-                                <a href="https://wa.me/962799569573?text=زيد%20بتقدر%20تساعدني%20بالبايثون" target="_blank" class="bg-whatsapp text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 social-button">
+                                <a href="https://wa.me/962799569573?text=مرحباً%20زيد،%20أحتاج%20مساعدة%20في%20بايثون" target="_blank" class="bg-whatsapp text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 social-button">
                                     <i class="fab fa-whatsapp social-icon"></i> WhatsApp
                                 </a>
                             </div>
@@ -2516,78 +2422,45 @@ root.mainloop()`
             `;
         }
 
-        function chatPage() {
+        function faqPage() {
             const t = translations[currentLang];
             return `
-                <div class="chat-page-container">
-                    <h1 class="chat-page-title floating-element">${t.chatPageTitle}</h1>
-                    <p class="chat-page-description">${t.chatPageDesc}</p>
+                <div class="faq-page-container">
+                    <h1 class="faq-page-title floating-element">${t.faqPageTitle}</h1>
+                    <p class="faq-page-description">${t.faqPageDesc}</p>
                     
-                    <div class="chat-page-features">
-                        <div class="chat-feature-card soft-purple">
-                            <div class="chat-feature-icon">
-                                <i class="fas fa-bolt"></i>
+                    ${Object.entries(faqQuestions).map(([level, questions]) => `
+                        <div class="faq-level">
+                            <h2 class="faq-level-title">المستوى ${level}: ${t[`level${level}`]}</h2>
+                            <div class="faq-questions">
+                                ${questions.map((q, index) => `
+                                    <div class="faq-question">
+                                        <div class="faq-question-header">
+                                            <span class="faq-question-number">${index + 1}</span>
+                                            <h3 class="faq-question-title">${q.question}</h3>
+                                        </div>
+                                        <div class="faq-question-answer">
+                                            ${q.answer}
+                                        </div>
+                                    </div>
+                                `).join('')}
                             </div>
-                            <h3 class="chat-feature-title">${t.chatFeature1Title}</h3>
-                            <p class="chat-feature-desc">${t.chatFeature1Desc}</p>
                         </div>
-                        
-                        <div class="chat-feature-card soft-blue">
-                            <div class="chat-feature-icon">
-                                <i class="fas fa-book-open"></i>
-                            </div>
-                            <h3 class="chat-feature-title">${t.chatFeature2Title}</h3>
-                            <p class="chat-feature-desc">${t.chatFeature2Desc}</p>
-                        </div>
-                        
-                        <div class="chat-feature-card soft-green">
-                            <div class="chat-feature-icon">
-                                <i class="fas fa-hands-helping"></i>
-                            </div>
-                            <h3 class="chat-feature-title">${t.chatFeature3Title}</h3>
-                            <p class="chat-feature-desc">${t.chatFeature3Desc}</p>
-                        </div>
-                    </div>
+                    `).join('')}
                     
-                    <div class="chat-examples">
-                        <h2 class="chat-example-title">${t.chatExamplesTitle}</h2>
-                        
-                        <div class="chat-example">
-                            <div class="chat-example-question">
-                                <i class="fas fa-question-circle"></i>
-                                ${t.chatExample1}
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h2>${t.faqContactTitle}</h2>
+                        <p>${t.faqContactDesc}</p>
+                        <form id="question-form" onsubmit="sendQuestion(event)">
+                            <div class="form-group">
+                                <label for="question">${t.faqContactPlaceholder}</label>
+                                <textarea id="question" name="question" placeholder="${t.faqContactPlaceholder}" required></textarea>
                             </div>
-                            <div class="chat-example-answer">
-                                ${aiResponses[currentLang]['data types']}
-                            </div>
-                        </div>
-                        
-                        <div class="chat-example">
-                            <div class="chat-example-question">
-                                <i class="fas fa-question-circle"></i>
-                                ${t.chatExample2}
-                            </div>
-                            <div class="chat-example-answer">
-                                ${aiResponses[currentLang]['functions']}
-                            </div>
-                        </div>
-                        
-                        <div class="chat-example">
-                            <div class="chat-example-question">
-                                <i class="fas fa-question-circle"></i>
-                                ${t.chatExample3}
-                            </div>
-                            <div class="chat-example-answer">
-                                ${aiResponses[currentLang]['loops']}
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-12">
-                        <button onclick="openChat()" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover-grow">
-                            <i class="fas fa-comments mr-2"></i> 
-                            ${currentLang === 'ar' ? 'فتح المساعد الذكي' : 'Open AI Assistant'}
-                        </button>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane mr-2"></i>${t.faqContactButton}
+                            </button>
+                        </form>
                     </div>
                 </div>
             `;
@@ -2617,8 +2490,8 @@ root.mainloop()`
                 case 'intro':
                     pageContent = introPage();
                     break;
-                case 'chat':
-                    pageContent = chatPage();
+                case 'faq':
+                    pageContent = faqPage();
                     break;
                 default:
                     pageContent = homePage();
@@ -2656,7 +2529,7 @@ root.mainloop()`
                             <a href="#" onclick="changePage('home')" class="hover:text-white transition-colors nav-link">${t.navHome}</a>
                             <a href="#" onclick="changePage('about')" class="hover:text-white transition-colors nav-link">${t.navAbout}</a>
                             <a href="#" onclick="changePage('levels')" class="hover:text-white transition-colors nav-link">${t.navLevels}</a>
-                            <a href="#" onclick="changePage('chat')" class="hover:text-white transition-colors nav-link">${t.navChat}</a>
+                            <a href="#" onclick="changePage('faq')" class="hover:text-white transition-colors nav-link">${t.navFaq}</a>
                         </div>
                         <div class="flex items-center space-x-4">
                             <button onclick="toggleLanguage()" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors hover-grow">
@@ -2689,6 +2562,27 @@ root.mainloop()`
                 backToTopBtn.classList.remove('visible');
             }
         }
+        
+        // Send question via WhatsApp
+        function sendQuestion(event) {
+            event.preventDefault();
+            const question = document.getElementById('question').value;
+            if (!question.trim()) {
+                alert('الرجاء إدخال سؤالك');
+                return;
+            }
+            
+            const message = encodeURIComponent(`مرحباً زيد، بتقدر تجاوبني على هذا السؤال؟\n\n${question}\n\nشكراً جزيلاً، زيد`);
+            const whatsappUrl = `https://wa.me/962799569573?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            document.getElementById('question-form').reset();
+            
+            // Show success message
+            alert('تم إرسال سؤالك بنجاح! سأرد عليك قريباً عبر واتساب.');
+        }
 
         // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
@@ -2696,22 +2590,6 @@ root.mainloop()`
             renderPage();
             createParticles();
             createShapes();
-            
-            // Initialize chat button
-            document.getElementById('ai-chat-button').addEventListener('click', () => {
-                if (chatOpen) {
-                    closeChat();
-                } else {
-                    openChat();
-                    scrollToBottom();
-                }
-            });
-            
-            document.getElementById('chat-input').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    sendMessage();
-                }
-            });
         });
         window.addEventListener('scroll', handleScroll);
     </script>
