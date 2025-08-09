@@ -440,9 +440,8 @@
         /* Back to Top Button */
         #back-to-top-btn {
             position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 30px;
+            right: 30px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -465,7 +464,7 @@
         }
         
         #back-to-top-btn:hover {
-            transform: translateX(-50%) scale(1.1);
+            transform: scale(1.1);
         }
         
         /* Features Section */
@@ -701,6 +700,156 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(92, 107, 192, 0.4);
         }
+        
+        /* Mobile Navigation */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(11, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e3f2fd;
+            font-size: 1.2rem;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .card-container {
+                height: 200px;
+                margin-bottom: 20px;
+            }
+            
+            .card-face {
+                padding: 1rem;
+            }
+            
+            .feature-card {
+                padding: 15px;
+            }
+            
+            .feature-icon {
+                font-size: 30px;
+            }
+            
+            .profile-img-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .example-container {
+                padding: 1rem;
+            }
+            
+            .example-title {
+                font-size: 1.1rem;
+            }
+            
+            .example-code {
+                padding: 0.8rem;
+                font-size: 0.85rem;
+            }
+            
+            .faq-level-title {
+                font-size: 1.4rem;
+            }
+            
+            .faq-question-title {
+                font-size: 1.1rem;
+            }
+            
+            .faq-question-answer {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+            
+            .quiz-option {
+                padding: 1rem;
+                font-size: 1rem;
+                min-height: 70px;
+            }
+            
+            .social-button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .home-title {
+                font-size: 2.5rem;
+            }
+            
+            .home-subtitle {
+                font-size: 1rem;
+            }
+            
+            .card-container {
+                height: 180px;
+            }
+            
+            .card-inner h3 {
+                font-size: 1.2rem;
+            }
+            
+            .profile-img-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .contact-form {
+                padding: 15px;
+            }
+            
+            .submit-btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#0b0c10]">
@@ -709,6 +858,19 @@
     <div class="background-overlay"></div>
     <div class="particles" id="particles"></div>
     <div class="geometric-shapes" id="shapes"></div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" onclick="toggleMobileMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mt-12">
+            <a href="#" onclick="changePage('home'); toggleMobileMenu()" class="mobile-nav-link">الرئيسية</a>
+            <a href="#" onclick="changePage('about'); toggleMobileMenu()" class="mobile-nav-link">عني</a>
+            <a href="#" onclick="changePage('levels'); toggleMobileMenu()" class="mobile-nav-link">المستويات</a>
+            <a href="#" onclick="changePage('faq'); toggleMobileMenu()" class="mobile-nav-link">الأسئلة الشائعة</a>
+        </div>
+    </div>
 
     <div id="app"></div>
     
@@ -886,7 +1048,17 @@
                 faqContactTitle: "هل لديك سؤال آخر؟",
                 faqContactDesc: "إذا كان لديك سؤال لم تجد إجابته في الأسئلة الشائعة، يمكنك طرحه هنا وسأرد عليك عبر واتساب",
                 faqContactPlaceholder: "اكتب سؤالك هنا...",
-                faqContactButton: "إرسال السؤال"
+                faqContactButton: "إرسال السؤال",
+                level1Title: "أنواع البيانات والإدخال",
+                level2Title: "المتغيرات والتعبيرات",
+                level3Title: "المعاملات",
+                level4Title: "التحكم بالتدفق",
+                level5Title: "الحلقات",
+                level6Title: "القوائم والمجموعات",
+                level7Title: "المجموعات والقواميس",
+                level8Title: "الدوال والاستثناءات",
+                level9Title: "الملفات و OOP",
+                level10Title: "واجهات المستخدم الرسومية (GUI)"
             },
             en: {
                 appName: "Zaid.python",
@@ -992,7 +1164,17 @@
                 faqContactTitle: "Have another question?",
                 faqContactDesc: "If you have a question not listed above, ask me here and I'll respond via WhatsApp",
                 faqContactPlaceholder: "Type your question here...",
-                faqContactButton: "Send Question"
+                faqContactButton: "Send Question",
+                level1Title: "Data Types & Input",
+                level2Title: "Variables & Expressions",
+                level3Title: "Operators",
+                level4Title: "Control Flow",
+                level5Title: "Loops",
+                level6Title: "Lists & Tuples",
+                level7Title: "Sets & Dictionaries",
+                level8Title: "Functions & Exceptions",
+                level9Title: "Files & OOP",
+                level10Title: "Graphical User Interfaces (GUI)"
             }
         };
 
@@ -1377,6 +1559,12 @@ root.mainloop()</code>`
             currentLang = currentLang === 'ar' ? 'en' : 'ar';
             updateDirection();
             renderPage();
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('open');
         }
 
         // Render functions now use translations
@@ -2431,7 +2619,7 @@ root.mainloop()`
                     
                     ${Object.entries(faqQuestions).map(([level, questions]) => `
                         <div class="faq-level">
-                            <h2 class="faq-level-title">المستوى ${level}: ${t[`level${level}`]}</h2>
+                            <h2 class="faq-level-title">${t[`level${level}Title`]}</h2>
                             <div class="faq-questions">
                                 ${questions.map((q, index) => `
                                     <div class="faq-question">
@@ -2532,6 +2720,9 @@ root.mainloop()`
                             <a href="#" onclick="changePage('faq')" class="hover:text-white transition-colors nav-link">${t.navFaq}</a>
                         </div>
                         <div class="flex items-center space-x-4">
+                            <button class="menu-toggle md:hidden" onclick="toggleMobileMenu()">
+                                <i class="fas fa-bars"></i>
+                            </button>
                             <button onclick="toggleLanguage()" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors hover-grow">
                                 ${currentLang === 'ar' ? 'English' : 'العربية'}
                             </button>
@@ -2590,8 +2781,8 @@ root.mainloop()`
             renderPage();
             createParticles();
             createShapes();
+            window.addEventListener('scroll', handleScroll);
         });
-        window.addEventListener('scroll', handleScroll);
     </script>
 
 </body>
