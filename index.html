@@ -850,6 +850,27 @@
                 font-size: 1rem;
             }
         }
+
+        /* إضافة أنيميشن للرسالة */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* ألوان للخيارات الصحيحة والخاطئة */
+        .quiz-option.correct {
+            background-color: rgba(46, 125, 50, 0.7) !important;
+            border-color: #82b1ff !important;
+        }
+        
+        .quiz-option.incorrect {
+            background-color: rgba(198, 40, 40, 0.7) !important;
+            border-color: #82b1ff !important;
+        }
     </style>
 </head>
 <body class="bg-[#0b0c10] font-tajawal">
@@ -1186,7 +1207,7 @@
                     answer: `أنواع البيانات الأساسية في بايثون تشمل:
 1. الأعداد الصحيحة (int): مثل 5, 10, -3
 2. الأعداد العشرية (float): مثل 3.14, 2.5, -0.5
-3. السلاسل النصية (str): مثل "مرحباً", 'بايثون'
+3. السلاسل النصية(الكلمات) (str): مثل "مرحباً", 'بايثون'
 4. القيم المنطقية (bool): True أو False
 5. القوائم (list): [1, 2, 3]
 6. المجموعات (tuple): (1, 2, 3)
@@ -1202,11 +1223,9 @@ print(type("Hello")) # <class 'str'></code>`
                     question: "كيف يمكنني أخذ مدخلات من المستخدم؟",
                     answer: `يمكنك استخدام الدالة input() لأخذ مدخلات من المستخدم:
 <code>name = input("أدخل اسمك: ")
-print("مرحباً، " + name + "!")</code>
+user_age = int(input("أدخل عمرك: "))  # تحويل النص إلى عدد صحيح
 
-لأخذ مدخلات رقمية، يمكنك تحويل النص إلى عدد:
-<code>age = int(input("أدخل عمرك: "))
-print("سيكون عمرك بعد سنة: ", age + 1)</code>`
+print(f"مرحباً، {name}! عمرك {user_age} سنة.")</code>`
                 },
                 {
                     question: "كيف يمكنني تحويل بين أنواع البيانات؟",
@@ -1273,26 +1292,32 @@ print(f"النتيجة: {div_result}")  # 3.75</code>`
 
 أمثلة:
 <code># معاملات حسابية
-print(10 + 3)  # 19
-print(10 - 3)  # 7
-print(10 * 3)  # 30
-print(10 / 3)  # 3.333
-print(10 % 3)  # 1 (باقي القسمة)
-print(10 // 3) # 3 (قسمة صحيحة)
-print(10 ** 3) # 1000 (أس)
+a = 15
+b = 4
+print(f"a + b = {a + b}")   # 19
+print(f"a - b = {a - b}")   # 11
+print(f"a * b = {a * b}")   # 60
+print(f"a / b = {a / b}")   # 3.75
+print(f"a % b = {a % b}")   # 3 (باقي القسمة)
+print(f"a // b = {a // b}") # 3 (قسمة صحيحة)
 
 # معاملات مقارنة
-print(10 == 10) # True
-print(10 != 10) # False
-print(10 > 5)   # True
-print(10 < 5)   # False
-print(10 >= 10) # True
-print(10 <= 5)  # False
+x = 10
+y = 12
+print(f"x == y: {x == y}") # False
+print(f"x != y: {x != y}") # True
+print(f"x < y: {x < y}")   # True
+print(f"x > y: {x > y}")   # False
+print(f"x <= y: {x <= y}") # True
+print(f"x >= y: {x >= y}") # False
 
-# معاملات منطقية
-print(True and False) # False
-print(True or False)  # True
-print(not True)       # False</code>`
+# معاملات المنطقية
+is_logged_in = True
+has_permission = False
+
+print(f"Is logged in AND has permission? {is_logged_in and has_permission}") # False
+print(f"Is logged in OR has permission? {is_logged_in or has_permission}")   # True
+print(f"NOT is_logged_in: {not is_logged_in}") # False</code>`
                 }
             ],
             4: [
@@ -1900,20 +1925,21 @@ print(full_name)  # زيد أبو الشعر`
                         {
                             title: t.exampleTitle + " 1",
                             description: t.exampleExplanation + ": المعاملات الحسابية",
-                            code: `# المعاملات الحسابية
+                            code: `# معاملات حسابية
 a = 15
 b = 4
 print(f"a + b = {a + b}")   # 19
 print(f"a - b = {a - b}")   # 11
 print(f"a * b = {a * b}")   # 60
-print(f"a / b = {a / b}")   # 3.75
-print(f"a % b = {a % b}")   # 3 (باقي القسمة)
-print(f"a // b = {a // b}") # 3 (قسمة صحيحة)`
+print(f"a / b = {a / b}")   # 3.333
+print(f"a % b = {a % b}")   # 1 (باقي القسمة)
+print(f"a // b = {a // b}") # 3 (قسمة صحيحة)
+print(f"a ** b = {a ** b}") # 50625 (أس)`
                         },
                         {
                             title: t.exampleTitle + " 2",
                             description: t.exampleExplanation + ": معاملات المقارنة",
-                            code: `# معاملات المقارنة
+                            code: `# معاملات مقارنة
 x = 10
 y = 12
 print(f"x == y: {x == y}") # False
@@ -1926,7 +1952,7 @@ print(f"x >= y: {x >= y}") # False`
                         {
                             title: t.exampleTitle + " 3",
                             description: t.exampleExplanation + ": المعاملات المنطقية",
-                            code: `# المعاملات المنطقية
+                            code: `# معاملات منطقية
 is_logged_in = True
 has_permission = False
 
@@ -2310,7 +2336,7 @@ root.mainloop()`
                                 <p id="quiz-question" class="text-xl text-white mb-8 font-bold">${levelData.quiz.question}</p>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                                     ${levelData.quiz.options.map((option, index) => `
-                                        <div class="quiz-option" onclick="selectOption(this, '${option}')">
+                                        <div class="quiz-option" onclick="handleOptionClick(this, '${option}', ${level})">
                                             <div class="flex items-center justify-center w-full">
                                                 <span class="mr-2 font-bold">${String.fromCharCode(65 + index)}.</span>
                                                 <code>${option}</code>
@@ -2319,11 +2345,7 @@ root.mainloop()`
                                     `).join('')}
                                 </div>
                                 
-                                <div class="mt-8 flex justify-center gap-4">
-                                    <button onclick="checkQuizAnswer('${level}')" class="bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105">
-                                        ${t.quizSubmit}
-                                    </button>
-                                </div>
+                                <!-- تم إزالة زر التحقق من الإجابة -->
                             </div>
                         </div>
                         
@@ -2344,7 +2366,7 @@ root.mainloop()`
             const t = translations[currentLang];
             const questions = quizQuestions[level];
             const isQuizStarted = quizState.currentQuestion > 0;
-            const isQuizFinished = quizState.currentQuestion >= questions.length;
+            const isQuizFinished = quizState.currentQuestion > questions.length;
             
             // Reset quiz state if it's a new quiz
             if (!isQuizStarted && !isQuizFinished) {
@@ -2539,52 +2561,57 @@ root.mainloop()`
             renderPage();
         }
 
-        function selectOption(element, option) {
-            // Remove selected class from all options
+        function handleOptionClick(element, option, level) {
+            // إزالة التحديد من جميع الخيارات
             document.querySelectorAll('.quiz-option').forEach(el => {
-                el.classList.remove('selected');
+                el.classList.remove('selected', 'correct', 'incorrect');
             });
             
-            // Add selected class to clicked option
+            // إضافة التحديد للخيار المختار
             element.classList.add('selected');
             
-            // Store the selected option
-            selectedOption = option;
-        }
-
-        function checkQuizAnswer(level) {
-            if (!selectedOption) {
-                alert(translations[currentLang].quizIncorrect);
-                return;
-            }
-            
+            // التحقق من الإجابة
             const correctAnswer = correctAnswers[level];
-            const modal = document.getElementById('quiz-feedback-modal');
-            const feedbackText = document.getElementById('feedback-text');
-            const feedbackIcon = document.getElementById('feedback-icon');
-
-            if (selectedOption === correctAnswer) {
-                feedbackText.innerHTML = translations[currentLang].quizCorrect;
-                feedbackIcon.innerHTML = `<i class="fas fa-hat-cowboy text-green-500"></i>`;
-                modal.classList.remove('hidden');
+            if (option === correctAnswer) {
+                element.classList.add('correct');
+                showFeedback(translations[currentLang].quizCorrect, 'green', 'fas fa-hat-cowboy');
             } else {
-                feedbackText.innerHTML = translations[currentLang].quizIncorrect;
-                feedbackIcon.innerHTML = `<i class="fas fa-times-circle text-red-500"></i>`;
-                modal.classList.remove('hidden');
+                element.classList.add('incorrect');
+                showFeedback(translations[currentLang].quizIncorrect, 'red', 'fas fa-times-circle');
+                
+                // إظهار الإجابة الصحيحة
+                document.querySelectorAll('.quiz-option').forEach(el => {
+                    const optionText = el.querySelector('code').textContent;
+                    if (optionText === correctAnswer) {
+                        el.classList.add('correct');
+                    }
+                });
             }
-
-            modal.querySelector('div').classList.add('scale-100');
-            modal.querySelector('div').classList.remove('scale-90');
-            
-            // Reset selection
-            selectedOption = null;
         }
 
-        function hideQuizFeedback() {
-            const modal = document.getElementById('quiz-feedback-modal');
-            modal.classList.add('hidden');
-            modal.querySelector('div').classList.remove('scale-100');
-            modal.querySelector('div').classList.add('scale-90');
+        // دالة لعرض الرسالة التفاعلية
+        function showFeedback(message, color, iconClass) {
+            // إنصراف الرسالة القديمة إذا كانت موجودة
+            const existingFeedback = document.getElementById('custom-feedback');
+            if (existingFeedback) existingFeedback.remove();
+            
+            // إنشاء عنصر الرسالة الجديدة
+            const feedback = document.createElement('div');
+            feedback.id = 'custom-feedback';
+            feedback.className = `fixed bottom-6 ${currentLang === 'ar' ? 'left-6' : 'right-6'} z-50`;
+            feedback.innerHTML = `
+                <div class="bg-${color}-500 text-white px-6 py-4 rounded-xl shadow-lg flex items-center animate-fadeIn">
+                    <i class="${iconClass} text-xl mr-3"></i>
+                    <span class="font-bold">${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(feedback);
+            
+            // إزالة الرسالة بعد 3 ثواني
+            setTimeout(() => {
+                feedback.remove();
+            }, 3000);
         }
 
         function introPage() {
