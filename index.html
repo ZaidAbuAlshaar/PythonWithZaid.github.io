@@ -852,7 +852,7 @@
         }
     </style>
 </head>
-<body class="bg-[#0b0c10]">
+<body class="bg-[#0b0c10] font-tajawal">
 
     <!-- Background Elements -->
     <div class="background-overlay"></div>
@@ -1273,7 +1273,7 @@ print(f"النتيجة: {div_result}")  # 3.75</code>`
 
 أمثلة:
 <code># معاملات حسابية
-print(10 + 3)  # 13
+print(10 + 3)  # 19
 print(10 - 3)  # 7
 print(10 * 3)  # 30
 print(10 / 3)  # 3.333
@@ -2754,7 +2754,7 @@ root.mainloop()`
             }
         }
         
-        // Send question via WhatsApp
+        // Send question via WhatsApp - FIXED VERSION
         function sendQuestion(event) {
             event.preventDefault();
             const question = document.getElementById('question').value;
@@ -2763,9 +2763,13 @@ root.mainloop()`
                 return;
             }
             
-            const message = encodeURIComponent(`مرحباً زيد، بتقدر تجاوبني على هذا السؤال؟\n\n${question}\n\nشكراً جزيلاً، زيد`);
-            const whatsappUrl = `https://wa.me/962799569573?text=${message}`;
+            const message = `مرحباً زيد، بتقدر تجاوبني على هذا السؤال؟\n\n${question}\n\nشكراً جزيلاً، زيد`;
+            const encodedMessage = encodeURIComponent(message);
             
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/962799569573?text=${encodedMessage}`;
+            
+            // Open in new tab
             window.open(whatsappUrl, '_blank');
             
             // Reset form
