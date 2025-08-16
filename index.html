@@ -871,9 +871,84 @@
             background-color: rgba(198, 40, 40, 0.7) !important;
             border-color: #82b1ff !important;
         }
+        
+        /* رسالة توضيحية للجوال */
+        .device-note {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #ff9800, #ff5722);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            z-index: 10000;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .device-note .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* إضافة أنماط جديدة لقسم الموارد */
+        .resource-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .resource-item {
+            background: rgba(40, 50, 70, 0.6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #5c6bc0;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-item:hover {
+            transform: translateX(10px);
+            background: rgba(50, 60, 80, 0.8);
+        }
+        
+        .resource-icon {
+            font-size: 1.5rem;
+            color: #5c6bc0;
+            margin-right: 1rem;
+        }
+        
+        .resource-link {
+            color: #82b1ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            color: #5c6bc0;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="bg-[#0b0c10] font-tajawal">
+
+    <!-- رسالة توضيحية للجوال -->
+    <div class="device-note" id="deviceNote">
+        <span>نصيحة من زيد أبو الشعر: لتجربة أفضل استخدم اللابتوب</span>
+        <button class="close-btn" onclick="document.getElementById('deviceNote').style.display='none'">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
 
     <!-- Background Elements -->
     <div class="background-overlay"></div>
@@ -2075,11 +2150,8 @@ print(fruits[0])  # تفاح
 print(fruits[-1]) # كرز (آخر عنصر)`
                         }
                     ],
-                    quiz: {
-                        question: t.quizQuestion + ": " + (currentLang === 'ar' ? `ما هي العملية التي يمكن إجراؤها على القائمة (List) ولكن لا يمكن إجراؤها على المجموعة (Tuple)؟` : `What operation can be performed on a List but not on a Tuple?`),
-                        options: ['my_list.append("orange")', 'print(my_list[0])', 'len(my_list)', 'my_tuple = ("a", "b")'],
-                        answer: 'my_list.append("orange")'
-                    }
+                    // تم حذف الأسئلة من المستوى 6 كما طلبتم
+                    quiz: null
                 },
                 7: {
                     title: t.level7,
@@ -2127,11 +2199,8 @@ values = car.values()
 print(values) # dict_values(['Ford', 'Mustang', 1964])`
                         }
                     ],
-                    quiz: {
-                        question: t.quizQuestion + ": " + (currentLang === 'ar' ? `كيف يمكنك الوصول إلى قيمة 'Ford' في القاموس التالي؟` : `How can you access the value 'Ford' in the following dictionary?`),
-                        options: ['my_dict["brand"]', 'my_dict[0]', 'my_dict.get("Ford")', 'my_dict.brand'],
-                        answer: 'my_dict["brand"]'
-                    }
+                    // تم حذف الأسئلة من المستوى 7 كما طلبتم
+                    quiz: null
                 },
                 8: {
                     title: t.level8,
@@ -2282,8 +2351,8 @@ calc_button = tk.Button(root, text="احسب", command=calculate)
 calc_button.pack(pady=10)
 
 # تسمية النتيجة
-result_label = tk.Label(root, text="")
-result_label.pack()
+result_label = tk.Label(root, text="");
+result_label.pack();
 
 root.mainloop()`
                         }
@@ -2298,7 +2367,6 @@ root.mainloop()`
 
             const levelData = levels[level] || { title: "Level Not Found", text: "", code: "", quiz: {question: "", options: [], answer: ""}};
             const langClass = currentLang === 'ar' ? 'text-right' : 'text-left';
-            const resources = [];
             
             return `
                 <div class="min-h-screen p-4">
@@ -2328,8 +2396,66 @@ root.mainloop()`
                                 </div>
                             `).join('')}
                         </div>
-
-                        <!-- Section: Quiz -->
+                        
+                        <!-- Resources Section (Added for all levels) -->
+                        <div class="bg-[#1f2833] p-8 md:p-12 rounded-3xl shadow-xl mb-12 ${langClass}">
+                            <h3 class="text-2xl font-bold text-yellow-400 mb-4">${t.resourcesTitle}</h3>
+                            <p class="text-lg text-gray-300 leading-relaxed mb-6">${t.resourceDesc}</p>
+                            
+                            <div class="grid grid-cols-1 gap-4">
+                                <!-- رابط w3schools الجديد للمستوى الحالي -->
+                                <div class="resource-item">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-globe resource-icon"></i>
+                                        <div>
+                                            <h4 class="text-lg font-bold text-white">W3Schools: ${levelData.title}</h4>
+                                            <a href="${getW3SchoolLink(level)}" target="_blank" class="resource-link">
+                                                <i class="fas fa-link mr-1"></i> ${t.resourceLink}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="resource-item">
+                                    <div class="flex items-center">
+                                        <i class="fab fa-youtube resource-icon"></i>
+                                        <div>
+                                            <h4 class="text-lg font-bold text-white">قناة بايثون بالعربي على اليوتيوب</h4>
+                                            <a href="https://youtu.be/ij6qQQlGKtE?si=ZK2jwSrXsjWY4Sau" target="_blank" class="resource-link">
+                                                <i class="fas fa-link mr-1"></i> ${t.resourceLink}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="resource-item">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-book resource-icon"></i>
+                                        <div>
+                                            <h4 class="text-lg font-bold text-white">كتاب تعلم بايثون للمبتدئين</h4>
+                                            <a href="https://python-guide.readthedocs.io/" target="_blank" class="resource-link">
+                                                <i class="fas fa-link mr-1"></i> ${t.resourceLink}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="resource-item">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-laptop-code resource-icon"></i>
+                                        <div>
+                                            <h4 class="text-lg font-bold text-white">تمارين تفاعلية على بايثون</h4>
+                                            <a href="https://nouvil.net/problem-solving/python-problem-solving/" target="_blank" class="resource-link">
+                                                <i class="fas fa-link mr-1"></i> ${t.resourceLink}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Section (Hidden for level 2,6,7) -->
+                        ${level !== 2 && level !== 6 && level !== 7 ? `
                         <div class="bg-[#1f2833] p-8 md:p-12 rounded-3xl shadow-xl ${langClass}">
                             <h3 class="text-2xl font-bold text-green-400 mb-6">${t.levelDetailQuiz}</h3>
                             <div class="flex flex-col items-center">
@@ -2339,7 +2465,7 @@ root.mainloop()`
                                         <div class="quiz-option" onclick="handleOptionClick(this, '${option}', ${level})">
                                             <div class="flex items-center justify-center w-full">
                                                 <span class="mr-2 font-bold">${String.fromCharCode(65 + index)}.</span>
-                                                <code>${option}</code>
+                                                <span>${option}</span>
                                             </div>
                                         </div>
                                     `).join('')}
@@ -2348,9 +2474,10 @@ root.mainloop()`
                                 <!-- تم إزالة زر التحقق من الإجابة -->
                             </div>
                         </div>
+                        ` : ''}
                         
                         <!-- Next Level Button -->
-                        ${selectedOption ? `
+                        ${(level === 2 || selectedOption) ? `
                             <div class="mt-6 text-center">
                                 <button onclick="changePage('levelDetail', ${level < 12 ? level + 1 : 1})" class="bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105">
                                     ${level < 12 ? t.levelDetailNext : t.levelDetailBack}
@@ -2360,6 +2487,23 @@ root.mainloop()`
                     </div>
                 </div>
             `;
+        }
+
+        // دالة لإنشاء روابط w3schools حسب المستوى
+        function getW3SchoolLink(level) {
+            const links = {
+                1: "https://www.w3schools.com/python/python_datatypes.asp",
+                2: "https://www.w3schools.com/python/python_variables.asp",
+                3: "https://www.w3schools.com/python/python_operators.asp",
+                4: "https://www.w3schools.com/python/python_conditions.asp",
+                5: "https://www.w3schools.com/python/python_for_loops.asp",
+                6: "https://www.w3schools.com/python/python_lists.asp",
+                7: "https://www.w3schools.com/python/python_dictionaries.asp",
+                8: "https://www.w3schools.com/python/python_functions.asp",
+                9: "https://www.w3schools.com/python/python_classes.asp",
+                10: "https://www.w3schools.com/python/python_try_except.asp"
+            };
+            return links[level] || "https://www.w3schools.com/python/";
         }
 
         function quizLevelPage(level) {
@@ -2581,7 +2725,7 @@ root.mainloop()`
                 
                 // إظهار الإجابة الصحيحة
                 document.querySelectorAll('.quiz-option').forEach(el => {
-                    const optionText = el.querySelector('code').textContent;
+                    const optionText = el.querySelector('span').textContent;
                     if (optionText === correctAnswer) {
                         el.classList.add('correct');
                     }
