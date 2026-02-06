@@ -4,33 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaid.python - تعلم بايثون مع زيد</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="تعلم لغة بايثون من الصفر حتى الاحتراف مع زيد أبو الشعر. دروس تفاعلية، اختبارات، وأمثلة عملية عبر 12 مستوى تعليمي.">
+    <meta name="author" content="Zaid Abu Alshaar">
+    <link rel="canonical" href="https://python.zaiddev.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zaid.python - تعلم بايثون مع زيد">
+    <meta property="og:description" content="تعلم لغة بايثون من الصفر حتى الاحتراف مع زيد أبو الشعر. دروس تفاعلية، اختبارات، وأمثلة عملية عبر 12 مستوى تعليمي.">
+    <meta property="og:url" content="https://python.zaiddev.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://python.zaiddev.com/assets/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Zaid.python - تعلم بايثون مع زيد أبو الشعر">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:site_name" content="Zaid.python">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zaid.python - تعلم بايثون مع زيد">
+    <meta name="twitter:description" content="تعلم لغة بايثون من الصفر حتى الاحتراف مع زيد أبو الشعر. دروس تفاعلية، اختبارات، وأمثلة عملية عبر 12 مستوى تعليمي.">
+    <meta name="twitter:image" content="https://python.zaiddev.com/assets/img/og-image.jpg">
+    <meta name="twitter:image:alt" content="Zaid.python - تعلم بايثون مع زيد أبو الشعر">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zaid Abu Alshaar",
+        "url": "https://python.zaiddev.com/",
+        "image": "https://python.zaiddev.com/assets/img/zaid-abu-alshaar.jpg",
+        "jobTitle": "Computer Science Student & Python Instructor",
+        "sameAs": [
+            "https://www.instagram.com/Zaid_10_7"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Zaid.python",
+        "url": "https://python.zaiddev.com/",
+        "description": "تعلم لغة بايثون من الصفر حتى الاحتراف مع زيد أبو الشعر",
+        "inLanguage": "ar"
+    }
+    </script>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0b0c10">
+
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- External CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-[#0b0c10] font-tajawal">
 
     <!-- رسالة توضيحية للجوال -->
-    <div class="device-note" id="deviceNote">
+    <div class="device-note" id="deviceNote" role="alert">
         <span>نصيحة من زيد أبو الشعر: لتجربة أفضل استخدم اللابتوب</span>
-        <button class="close-btn" onclick="document.getElementById('deviceNote').style.display='none'">
-            <i class="fas fa-times"></i>
+        <button class="close-btn" onclick="document.getElementById('deviceNote').style.display='none'" aria-label="إغلاق التنبيه">
+            <i class="fas fa-times" aria-hidden="true"></i>
         </button>
     </div>
 
     <!-- Background Elements -->
-    <div class="background-overlay"></div>
-    <div class="particles" id="particles"></div>
-    <div class="geometric-shapes" id="shapes"></div>
+    <div class="background-overlay" aria-hidden="true"></div>
+    <div class="particles" id="particles" aria-hidden="true"></div>
+    <div class="geometric-shapes" id="shapes" aria-hidden="true"></div>
 
     <!-- Mobile Navigation -->
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="close-menu" onclick="toggleMobileMenu()">
-            <i class="fas fa-times"></i>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="القائمة الجانبية">
+        <button class="close-menu" onclick="toggleMobileMenu()" aria-label="إغلاق القائمة">
+            <i class="fas fa-times" aria-hidden="true"></i>
         </button>
         <div class="mt-12">
             <a href="#" onclick="changePage('home'); toggleMobileMenu()" class="mobile-nav-link">الرئيسية</a>
@@ -38,65 +96,30 @@
             <a href="#" onclick="changePage('levels'); toggleMobileMenu()" class="mobile-nav-link">المستويات</a>
             <a href="#" onclick="changePage('faq'); toggleMobileMenu()" class="mobile-nav-link">الأسئلة الشائعة</a>
         </div>
-    </div>
+    </nav>
 
-    <div id="app"></div>
-    
+    <main id="app"></main>
+
     <!-- زر "للأعلى" -->
-    <button id="back-to-top-btn" class="back-to-top" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up text-lg"></i>
-    </button>
-
-    <script src="script.js"></script>
-    
-    <!-- رسالة توضيحية للجوال -->
-    <div class="device-note" id="deviceNote">
-        <span>نصيحة من زيد أبو الشعر: لتجربة أفضل استخدم اللابتوب</span>
-        <button class="close-btn" onclick="document.getElementById('deviceNote').style.display='none'">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
-    <!-- Background Elements -->
-    <div class="background-overlay"></div>
-    <div class="particles" id="particles"></div>
-    <div class="geometric-shapes" id="shapes"></div>
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="close-menu" onclick="toggleMobileMenu()">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="mt-12">
-            <a href="#" onclick="changePage('home'); toggleMobileMenu()" class="mobile-nav-link">الرئيسية</a>
-            <a href="#" onclick="changePage('about'); toggleMobileMenu()" class="mobile-nav-link">عني</a>
-            <a href="#" onclick="changePage('levels'); toggleMobileMenu()" class="mobile-nav-link">المستويات</a>
-            <a href="#" onclick="changePage('faq'); toggleMobileMenu()" class="mobile-nav-link">الأسئلة الشائعة</a>
-        </div>
-    </div>
-
-    <div id="app"></div>
-    
-    <!-- زر "للأعلى" -->
-    <button id="back-to-top-btn" class="back-to-top" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up text-lg"></i>
+    <button id="back-to-top-btn" class="back-to-top" onclick="scrollToTop()" aria-label="العودة إلى أعلى الصفحة">
+        <i class="fas fa-arrow-up text-lg" aria-hidden="true"></i>
     </button>
 
     <!-- Popup تنبيهي جديد -->
-    <div class="popup-overlay" id="desktopPopup">
+    <div class="popup-overlay" id="desktopPopup" role="dialog" aria-labelledby="popupTitle" aria-modal="true">
         <div class="popup-content">
-            <button class="popup-close" onclick="closePopup()">
-                <i class="fas fa-times"></i>
+            <button class="popup-close" onclick="closePopup()" aria-label="إغلاق النافذة">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
-            <div class="popup-icon">
+            <div class="popup-icon" aria-hidden="true">
                 <i class="fas fa-laptop"></i>
             </div>
-            <h2 class="popup-title">نصيحة من زيد أبو الشعر</h2>
+            <h2 class="popup-title" id="popupTitle">نصيحة من زيد أبو الشعر</h2>
             <p class="popup-message">لتحقيق أفضل تجربة تعلم واستفادة من المحتوى، ننصحك باستخدام الموقع من جهاز الحاسوب. ستتمكن من رؤية المحتوى بشكل أوضح والتفاعل مع الدروس بسهولة أكبر.</p>
             <button class="popup-button" onclick="closePopup()">موافق، فهمت</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

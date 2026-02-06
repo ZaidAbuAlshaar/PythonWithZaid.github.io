@@ -794,7 +794,7 @@ function aboutPage() {
                 
                 <!-- Profile Image with the actual photo -->
                 <div class="profile-img-container">
-                    <img src="6U8A0156.JPG" alt="Zaid Abu Al Shaar" class="profile-img">
+                    <img src="assets/img/zaid-abu-alshaar.jpg" alt="زيد أبو الشعر - Zaid Abu Alshaar" class="profile-img" width="220" height="220" loading="lazy">
                     <div class="profile-img-overlay">
                         <i class="fas fa-user-circle text-white text-4xl"></i>
                     </div>
@@ -1791,11 +1791,13 @@ function introPage() {
                 <div class="bg-[#1f2833] p-4 rounded-3xl shadow-xl max-w-4xl mx-auto">
                     <!-- YouTube Video Embed -->
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/ucg4QUss_-c" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        <iframe
+                            src="https://www.youtube.com/embed/ucg4QUss_-c"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
+                            loading="lazy"
+                            title="${currentLang === 'ar' ? 'مقدمة تعلم بايثون مع زيد' : 'Introduction to Python with Zaid'}"
                         ></iframe>
                     </div>
                 </div>
@@ -1903,7 +1905,7 @@ function header() {
         <header class="fixed top-0 left-0 w-full z-50 bg-[#0b0c10]/80 backdrop-blur-md shadow-md p-4">
             <nav class="container mx-auto flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <div class="text-2xl font-bold text-blue-500 logo-link" onclick="changePage('home')">
+                    <div class="text-2xl font-bold text-blue-500 logo-link" onclick="changePage('home')" role="link" tabindex="0" onkeydown="if(event.key==='Enter')changePage('home')" aria-label="Zaid.python - ${currentLang === 'ar' ? 'الرئيسية' : 'Home'}">
                         Zaid.<span class="text-white">python</span>
                     </div>
                 </div>
@@ -1914,10 +1916,10 @@ function header() {
                     <a href="#" onclick="changePage('faq')" class="hover:text-white transition-colors nav-link">${t.navFaq}</a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button class="menu-toggle md:hidden" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars"></i>
+                    <button class="menu-toggle md:hidden" onclick="toggleMobileMenu()" aria-label="${currentLang === 'ar' ? 'فتح القائمة' : 'Open menu'}">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
                     </button>
-                    <button onclick="toggleLanguage()" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors hover-grow">
+                    <button onclick="toggleLanguage()" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors hover-grow" aria-label="${currentLang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}">
                         ${currentLang === 'ar' ? 'English' : 'العربية'}
                     </button>
                 </div>
