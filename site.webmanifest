@@ -1,0 +1,23 @@
+{
+    "name": "Zaid.python - تعلم بايثون مع زيد",
+    "short_name": "Zaid.python",
+    "description": "تعلم لغة بايثون من الصفر حتى الاحتراف مع زيد أبو الشعر",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0b0c10",
+    "theme_color": "#0b0c10",
+    "lang": "ar",
+    "dir": "rtl",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://python.zaiddev.com/sitemap.xml
