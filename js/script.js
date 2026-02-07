@@ -703,6 +703,7 @@ function homePage() {
 
             <div class="text-center z-10 p-4">
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 floating-element">${t.homeTitle}</h1>
+                <p class="text-sm md:text-base text-gray-400 mb-2">${currentLang === 'ar' ? 'بواسطة <strong class="text-white">زيد أبو الشعر</strong> — <span lang="en" dir="ltr">Zaid Abu Alshaar</span>' : 'By <strong class="text-white">Zaid Abu Alshaar</strong> — <span lang="ar" dir="rtl">زيد أبو الشعر</span>'}</p>
                 <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">${t.homeSubtitle}</p>
                 <div class="flex flex-col md:flex-row justify-center gap-4">
                     <button onclick="changePage('levels')" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover-grow">
